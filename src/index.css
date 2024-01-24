@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  background-color: black;
+  font-family: "Poppins", sans-serif;
+}
+a {
+  color: #fff;
+}
+
+header .logo a {
+  font-size: 28px;
+}
+
+nav li a {
+  font-size: 18px;
+}
