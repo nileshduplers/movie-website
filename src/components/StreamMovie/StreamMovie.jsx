@@ -28,10 +28,14 @@ function StreamMovie() {
         <h1 className="text-center text-5xl text-white">
           Stream Latest Movies Now!
         </h1>
-        <div className="filter-data py-10">
-          <ul className="flex items-center justify-center text-3xl">
-            <li className="mx-5"></li>
-          </ul>
+        <div className="filter-data py-5">
+          <select className="flex items-center justify-center text-2xl flex-wrap px-4 py-1 ml-auto">
+            {data.map((data) => {
+              return (
+                <option className="mx-5 mb-5 text-black">{data.Year}</option>
+              );
+            })}
+          </select>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 py-10">
           {currentRecords.map((data) => {
@@ -62,6 +66,12 @@ function StreamMovie() {
                 <div className="realeaed p-5 py-2">
                   <p className="mb-2 text-xl  tracking-tight text-gray-900 dark:text-white">
                     Released: {data.Released}
+                  </p>
+                </div>
+
+                <div className="realeaed p-5 py-2">
+                  <p className="mb-1 text-xl  tracking-tight text-gray-900 dark:text-white">
+                    Runtime: {data.Runtime}
                   </p>
                 </div>
               </div>
