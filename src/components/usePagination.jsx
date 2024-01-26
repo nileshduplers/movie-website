@@ -10,17 +10,17 @@ const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
     if (currentPage !== 1) setCurrentPage(currentPage - 1);
   };
   return (
-    <nav>
-      <ul className="pagination justify-content-center flex flex-wrap">
-        <li className="page-item mx-2">
-          <a className="page-link" onClick={goToPrevPage} href="#">
+    <div>
+      <ul className="pagination justify-center flex flex-wrap ">
+        <li className="page-item mx-2 text-2xl">
+          <a className="page-link hover:black" onClick={goToPrevPage} href="#">
             Previous
           </a>
         </li>
         {pageNumbers.map((pgNumber) => (
           <li
             key={pgNumber}
-            className={`page-item mx-2 ${
+            className={`page-item mx-2 text-2xl ${
               currentPage == pgNumber ? "active" : ""
             } `}
           >
@@ -33,13 +33,13 @@ const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
             </a>
           </li>
         ))}
-        <li className="page-item">
+        <li className="page-item text-2xl">
           <a className="page-link" onClick={goToNextPage} href="#">
             Next
           </a>
         </li>
       </ul>
-    </nav>
+    </div>
   );
 };
 

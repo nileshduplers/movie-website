@@ -7,11 +7,11 @@ function StreamMovie() {
   const [loading, setLoading] = useState(true);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [recordsPerPage] = useState(10);
+  const [recordsPerPage] = useState(12);
 
   useEffect(() => {
     axios
-      .get("https://jsonplaceholder.typicode.com/photos")
+      .get("https://65b325c7770d43aba47954be.mockapi.io/v1/movie")
       .then((response) => {
         setData(response.data);
       });
@@ -43,21 +43,26 @@ function StreamMovie() {
                 <a href="#">
                   <img
                     className="rounded-t-lg w-full"
-                    src={data.thumbnailUrl}
+                    src={data.Poster}
                     alt=""
                   />
                 </a>
                 <div className="p-5">
                   <a href="#">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                      {data.title}
+                    <h5 className="mb-0 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                      {data.Title}
                     </h5>
                   </a>
                 </div>
                 <div className="year p-5 py-2">
-                  <h6 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    {data.Year}
+                  <h6 className="mb-0 text-xl  tracking-tight text-gray-900 dark:text-white">
+                    Year: {data.Year}
                   </h6>
+                </div>
+                <div className="realeaed p-5 py-2">
+                  <p className="mb-2 text-xl  tracking-tight text-gray-900 dark:text-white">
+                    Released: {data.Released}
+                  </p>
                 </div>
               </div>
             );

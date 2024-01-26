@@ -18,3 +18,7 @@ header .logo a {
 nav li a {
   font-size: 18px;
 }
+
+.page-item.active a {
+  color: #949494;
+}
